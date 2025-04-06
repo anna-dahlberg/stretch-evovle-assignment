@@ -5,6 +5,8 @@ fetchProfilesButton.addEventListener('click', async () => {
     try {        
         const response = await fetch('/api/profiles');
         const profiles = await response.json();
+
+        profileCardContainer.innerHTML = '';
     
         profiles.forEach( profile  => {
             const profileCard = document.createElement('div');
