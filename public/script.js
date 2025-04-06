@@ -1,13 +1,11 @@
 const fetchProfilesButton = document.getElementById('fetchProfilesButton');
 const profileCardContainer = document.getElementById('profileCardContainer');
 
-fetchProfilesButton.addEventListener('click', () => {
-
-        const response = fetch('api/profiles');
-        const data = response.json();
-        console.log(data);
-        const profiles = data;
-
+fetchProfilesButton.addEventListener('click', async () => {
+    try {        
+        const response = await fetch('/api/profiles');
+        const profiles = await response.json();
+    
         profiles.forEach( profile  => {
             const profileCard = document.createElement('div');
             profileCard.classList.add('profileCard');
@@ -15,8 +13,13 @@ fetchProfilesButton.addEventListener('click', () => {
             profileCard.innerHTML = `
                 <img src="${profile.picture.large}" class="profileImage"/>
             `;
-
+    
             profileCardContainer.appendChild(profileCard);
         });
+
+    } catch (error) {
+        profileCardContainer.innerHTML = '<p>Failed to load profiles</p>';
+        console.error('Error fetching profiles:', error);
+    }
 
 });
