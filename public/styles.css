@@ -1,7 +1,9 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     box-sizing: border-box;
     margin: 0;
+    background-color: #F3EDE1;
+    color: #4B5D3B;
 }
 
 header {
@@ -12,10 +14,31 @@ header {
     height: 200px;
 }
 
+h1 {
+    font-size: 60px;
+    padding: 30px;
+}
+
 #fetchProfilesButton {
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
+    padding: 15px 20px;
+    background-color: transparent;
+    border: 1px solid #652323;
+    border-radius: 50px;
+    color: #652323;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 0 0;
+    transition: all 200ms;
+}
+
+#fetchProfilesButton:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 1px #652323;
+}
+
+#fetchProfilesButton:active {
+        transform: translateY(10px);
+        box-shadow: 0 0 0;
 }
 
 #profileCardContainer {
@@ -27,7 +50,7 @@ header {
 }
 
 .profileCard {
-    border: 1px solid #232323;
+    border: 1px solid #4B5D3B;
     border-radius: 18px;
     padding: 1rem;
     width: 300px;
@@ -36,5 +59,39 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+}
+
+.profileCard h2 {
+    font-size: 25px;
+}
+
+.profileText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px
+}
+
+.profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    opacity: 90%;
+}
+
+.emailButton {
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 1px solid #652323;
+    border-radius: 50px;
+    color: #652323;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.emailButton:hover {
+    background-color: #652323;
+    color: #F3EDE1;
 }
 

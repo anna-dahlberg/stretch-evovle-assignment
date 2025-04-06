@@ -14,6 +14,12 @@ fetchProfilesButton.addEventListener('click', async () => {
     
             profileCard.innerHTML = `
                 <img src="${profile.picture.large}" class="profileImage"/>
+                <div class="profileText">
+                <h2>${profile.name.first} ${profile.name.last}</h2>
+                <p>Location: ${profile.location.city}, ${profile.location.country}</p>
+                <p>Cellphone number: ${profile.cell}</p>
+                <a href="mailto:${profile.email}" class = "emailButton">Send me an e-mail!</a>
+                </div>
             `;
     
             profileCardContainer.appendChild(profileCard);
