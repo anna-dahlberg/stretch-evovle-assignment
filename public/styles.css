@@ -26,7 +26,7 @@ section {
     gap: 10px;
 }
 
-#profileCards {
+#profileCardContainer {
     width: 300px;
     height: 400px;
     background-color: hotpink;
